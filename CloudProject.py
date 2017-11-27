@@ -45,7 +45,15 @@ def typeClassification(r,contData,ctProb,lkProbWa,lkProbSt):
     ct6 = ctProb[5] *lkProbSt[5][idx_st]*lkProbWa[5][idx_wa] * numpy.random.normal(contData.get("slope")[5][0],contData.get("slope")[5][1],r[3])* numpy.random.normal(contData.get("elevation")[5][0],contData.get("elevation")[5][1],r[1]) * numpy.random.normal(contData.get("aspect")[5][0],contData.get("aspect")[5][1],r[2]) * numpy.random.normal(contData.get("hDFpts")[5][0],contData.get("hDFpts")[5][1],r[10]) * numpy.random.normal(contData.get("hilsde12")[5][0],contData.get("hilsde12")[5][1],r[8]) * numpy.random.normal(contData.get("hilsde3")[5][0],contData.get("hilsde3")[5][1],r[9]) * numpy.random.normal(contData.get("hDrodways")[5][0],contData.get("hDrodways")[5][1],r[6]) * numpy.random.normal(contData.get("hilsde9")[5][0],contData.get("hilsde9")[5][1],r[7]) * numpy.random.normal(contData.get("vDhydr")[5][0],contData.get("vDhydr")[5][1],r[5]) * numpy.random.normal(contData.get("hDhydro")[5][0],contData.get("hDhydro")[5][1],r[4])
 
     ct7 = ctProb[6] *lkProbSt[6][idx_st]*lkProbWa[6][idx_wa] * numpy.random.normal(contData.get("slope")[6][0],contData.get("slope")[6][1],r[3])* numpy.random.normal(contData.get("elevation")[6][0],contData.get("elevation")[6][1],r[1]) * numpy.random.normal(contData.get("aspect")[6][0],contData.get("aspect")[6][1],r[2]) * numpy.random.normal(contData.get("hDFpts")[6][0],contData.get("hDFpts")[6][1],r[10]) * numpy.random.normal(contData.get("hilsde12")[6][0],contData.get("hilsde12")[6][1],r[8]) * numpy.random.normal(contData.get("hilsde3")[6][0],contData.get("hilsde3")[6][1],r[9]) * numpy.random.normal(contData.get("hDrodways")[6][0],contData.get("hDrodways")[6][1],r[6]) * numpy.random.normal(contData.get("hilsde9")[6][0],contData.get("hilsde9")[6][1],r[7]) * numpy.random.normal(contData.get("vDhydr")[6][0],contData.get("vDhydr")[6][1],r[5]) * numpy.random.normal(contData.get("hDhydro")[6][0],contData.get("hDhydro")[6][1],r[4])
-
+    #Normalize the data
+    sumVal = ct1+ct2+ct3+ct4+ct5+ct6+ct7
+    ct1 = ct1/sumVal
+    ct2 = ct2/sumVal
+    ct3 = ct3/sumVal
+    ct4 = ct4/sumVal
+    ct5 = ct5/sumVal
+    ct6 = ct6/sumVal
+    ct7 = ct7/sumVal
     m= ct1
     tp=1
     if ct2 > m:
