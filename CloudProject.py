@@ -47,27 +47,27 @@ def typeClassification(r,contData,ctProb,lkProbWa,lkProbSt):
     ct7 = ctProb[6] *lkProbSt[6][idx_st]*lkProbWa[6][idx_wa] * numpy.random.normal(contData.get("slope")[6][0],contData.get("slope")[6][1],r[3])* numpy.random.normal(contData.get("elevation")[6][0],contData.get("elevation")[6][1],r[1]) * numpy.random.normal(contData.get("aspect")[6][0],contData.get("aspect")[6][1],r[2]) * numpy.random.normal(contData.get("hDFpts")[6][0],contData.get("hDFpts")[6][1],r[10]) * numpy.random.normal(contData.get("hilsde12")[6][0],contData.get("hilsde12")[6][1],r[8]) * numpy.random.normal(contData.get("hilsde3")[6][0],contData.get("hilsde3")[6][1],r[9]) * numpy.random.normal(contData.get("hDrodways")[6][0],contData.get("hDrodways")[6][1],r[6]) * numpy.random.normal(contData.get("hilsde9")[6][0],contData.get("hilsde9")[6][1],r[7]) * numpy.random.normal(contData.get("vDhydr")[6][0],contData.get("vDhydr")[6][1],r[5]) * numpy.random.normal(contData.get("hDhydro")[6][0],contData.get("hDhydro")[6][1],r[4])
 
     m= ct1
-    type=1
+    tp=1
     if ct2 > m:
         m=ct2
-        type=2
+        tp=2
     elif ct3 >m:
         m=ct3
-        type=3
+        tp=3
     elif ct4 > m:
         m=ct4
-        type=4
+        tp=4
     elif ct5 > m:
         m=ct5
-        type=5
+        tp=5
     elif ct6 > m:
         m=ct6
-        type=6
+        tp=6
     elif ct7 > m:
         m=ct7
-        type=7
+        tp=7
 
-    return [type,m]
+    return [tp,m]
 
 def meanAndStdCalc(rddCT,col):
     if rddCT.count()!=0:
