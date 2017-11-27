@@ -19,13 +19,18 @@ def typeClassification(r,contData,ctProb,lkProbWa,lkProbSt):
     idx_wa=0
     list_st= r[15:55]
     list_wa= r[11:15]
-    for i in list_st:
-        if i is '1':
-            idx_st=i
-
-    for i in list_wa:
-        if i is '1':
-            idx_wa=i
+   
+    idx =0
+    
+    while(idx < len(list_st)):
+	    if list_st[idx] is '1':
+		    idx_st=idx
+		
+    idx=0
+    
+    while(idx < len(list_wa)):
+	    if list_wa[idx] is '1':
+		    idx_wa=idx	
     #mean,sd,value
     ct1 = ctProb[0] * lkProbSt[0][idx_st]*lkProbWa[0][idx_wa] * numpy.random.normal(contData.get("slope")[0][0],contData.get("slope")[0][1],r[3])* numpy.random.normal(contData.get("elevation")[0][0],contData.get("elevation")[0][1],r[1]) * numpy.random.normal(contData.get("aspect")[0][0],contData.get("aspect")[0][1],r[2]) * numpy.random.normal(contData.get("hDFpts")[0][0],contData.get("hDFpts")[0][1],r[10]) * numpy.random.normal(contData.get("hilsde12")[0][0],contData.get("hilsde12")[0][1],r[8]) * numpy.random.normal(contData.get("hilsde3")[0][0],contData.get("hilsde3")[0][1],r[9]) * numpy.random.normal(contData.get("hDrodways")[0][0],contData.get("hDrodways")[0][1],r[6]) * numpy.random.normal(contData.get("hilsde9")[0][0],contData.get("hilsde9")[0][1],r[7]) * numpy.random.normal(contData.get("vDhydr")[0][0],contData.get("vDhydr")[0][1],r[5]) * numpy.random.normal(contData.get("hDhydro")[0][0],contData.get("hDhydro")[0][1],r[4])
 
