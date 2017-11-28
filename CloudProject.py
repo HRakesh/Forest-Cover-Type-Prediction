@@ -34,6 +34,15 @@ def typeClassification(r,contData,ctProb,lkProbWa,lkProbSt):
 		    idx_wa=idx
 	     idx=idx+1
     #mean,sd,value
+    # remove the numpy.random  method and replcae it with 
+    #mean=86.2 contval
+    #st=9.7 contval
+    #x=r[] 
+
+    #result = (1/(math.sqrt(2*math.pi)*st))* math.exp((-math.pow((x-mean),2))/(2*math.pow(st,2)))
+    #replace numpy.random.normal(contData.get("slope")[0][0],contData.get("slope")[0][1],r[3])  ----->(1/(math.sqrt(2*math.pi)*contData.get("slope")[0][1]))* math.exp((-math.pow((r[3]-contData.get("slope")[0][0]),2))/(2*math.pow(contData.get("slope")[0][1],2)))
+
+
     ct1 = ctProb[0] * lkProbSt[0][idx_st]*lkProbWa[0][idx_wa] * numpy.random.normal(contData.get("slope")[0][0],contData.get("slope")[0][1],r[3])* numpy.random.normal(contData.get("elevation")[0][0],contData.get("elevation")[0][1],r[1]) * numpy.random.normal(contData.get("aspect")[0][0],contData.get("aspect")[0][1],r[2]) * numpy.random.normal(contData.get("hDFpts")[0][0],contData.get("hDFpts")[0][1],r[10]) * numpy.random.normal(contData.get("hilsde12")[0][0],contData.get("hilsde12")[0][1],r[8]) * numpy.random.normal(contData.get("hilsde3")[0][0],contData.get("hilsde3")[0][1],r[9]) * numpy.random.normal(contData.get("hDrodways")[0][0],contData.get("hDrodways")[0][1],r[6]) * numpy.random.normal(contData.get("hilsde9")[0][0],contData.get("hilsde9")[0][1],r[7]) * numpy.random.normal(contData.get("vDhydr")[0][0],contData.get("vDhydr")[0][1],r[5]) * numpy.random.normal(contData.get("hDhydro")[0][0],contData.get("hDhydro")[0][1],r[4])
 
     ct2 = ctProb[1] *lkProbSt[1][idx_st]*lkProbWa[1][idx_wa] * numpy.random.normal(contData.get("slope")[1][0],contData.get("slope")[1][1],r[3])* numpy.random.normal(contData.get("elevation")[1][0],contData.get("elevation")[1][1],r[1]) * numpy.random.normal(contData.get("aspect")[1][0],contData.get("aspect")[1][1],r[2]) * numpy.random.normal(contData.get("hDFpts")[1][0],contData.get("hDFpts")[1][1],r[10]) * numpy.random.normal(contData.get("hilsde12")[1][0],contData.get("hilsde12")[1][1],r[8]) * numpy.random.normal(contData.get("hilsde3")[1][0],contData.get("hilsde3")[1][1],r[9]) * numpy.random.normal(contData.get("hDrodways")[1][0],contData.get("hDrodways")[1][1],r[6]) * numpy.random.normal(contData.get("hilsde9")[1][0],contData.get("hilsde9")[1][1],r[7]) * numpy.random.normal(contData.get("vDhydr")[1][0],contData.get("vDhydr")[1][1],r[5]) * numpy.random.normal(contData.get("hDhydro")[1][0],contData.get("hDhydro")[1][1],r[4])
