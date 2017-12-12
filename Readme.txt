@@ -50,6 +50,6 @@ Steps to run:
 	Example: python NB.py Data.csv > NBlibOutput.txt
 
 Note:
-1) Make sure that the file is named as Train.csv
-2) Train.csv file should be present in the same directory as the pyspark file
+1) Make sure that the file is named as Data.csv
+2) Data.csv file should be present in the same directory as the pyspark file
 3) Output will be displayed in the console if the last part of the cmd is not provided in cmd prompt.
